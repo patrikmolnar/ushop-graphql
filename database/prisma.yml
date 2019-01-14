@@ -1,0 +1,2 @@
+endpoint: http://revie-Publi-1B6K7WADR6O4Y-76537972.ap-northeast-1.elb.amazonaws.com/reviews/v1
+datamodel: datamodel.graphql

@@ -1,0 +1,28 @@
+# import * from './generated/prisma.graphql'
+
+scalar Upload
+
+type Query {
+    reviews: [Reviews!]!
+    documents(where: DocumentWhereInput): [Document]!
+    campaigns: [Campaign!]!
+}
+
+type Mutation {
+    createReviews(product_id: Int!, ba_id:Int!, country:String!, title:String, body:String!, name:String!, rating:Int!): Reviews!
+    createDocument(file: Upload!, filenameENG:String, filenameNative:String, country:String):Document!
+    deleteReviews(id:ID!): Reviews!
+    deleteDocument(id:ID!): Document!
+    updateReviews(id:ID!, isHidden:Boolean!): Reviews!
+    createCampaign(page1:Int, page2:Int, page3:Int, checkout1:Int, checkout2:Int, checkout3:Int): Campaign!
+    updatePage1(id:ID!, page1:Int): Campaign!
+    updatePage2(id:ID!, page2:Int): Campaign!
+    updatePage3(id:ID!, page3:Int): Campaign!
+    updateCheckout1(id:ID!, checkout1:Int): Campaign!
+    updateCheckout2(id:ID!, checkout2:Int): Campaign!
+    updateCheckout3(id:ID!, checkout3:Int): Campaign!
+}
+
+type Subscription {
+  campaign: CampaignSubscriptionPayload
+}

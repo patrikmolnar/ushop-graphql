@@ -1,0 +1,34 @@
+type Reviews {
+	id: ID! @unique
+	product_id: Int!
+	ba_id: Int!
+	country: String!
+	title: String
+	body: String!
+	name: String!
+	rating: Int!
+	isHidden: Boolean @default(value: "false")
+	createdAt: DateTime!
+}
+
+
+type Document {
+	id: ID! @unique
+	country: String
+	filename: String
+	mimetype: String
+	isPublic: Boolean @default(value: "true")
+	filenameENG: String
+	filenameNative: String
+	url: String
+}
+
+type Campaign {
+  	id: ID! @unique
+	page1: Int
+	page2: Int
+	page3: Int
+	checkout1: Int
+	checkout2: Int
+	checkout3: Int
+}
